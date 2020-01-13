@@ -1,0 +1,34 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	
+
+	
+	<!-- <bean name="messageProcessorImpl" id= "messageProcessorImpl" class="com.example.demo.MessageProcessorImpl" scope="singleton" >
+	</bean> -->
+	
+	<bean name="myBean" id= "myBean" class="com.example.demo.MyBean" scope="singleton" >
+	<property name="name" value="Welcome to spring...">
+	
+	</property>
+	</bean>
+	
+	<bean name="GFG" id="GFG" class="com.example.demo.GFG" scope="singleton"  > 
+        <property name="geek"> 
+            <ref bean="CsvGFG" /> 
+        </property> 
+        
+         <constructor-arg ref = "CsvGFG"/>
+    </bean> 
+      
+<bean name="CsvGFG" id="CsvGFG" class="com.example.demo.CsvGFG" /> 
+
+	
+</beans>
